@@ -4,8 +4,9 @@ class Station
     @@service ||= StationService.new
   end
 
-  def self.all
-    stations = service.get_stations
+  def self.all(zip)
+    stations = service.get_stations(zip)
+  end
 
 
 end
