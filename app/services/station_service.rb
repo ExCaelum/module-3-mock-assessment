@@ -6,7 +6,7 @@ class StationService
   end
 
   def get_stations(zip)
-    response = @connection.get("/api/alt-fuel-stations/v1/nearest.json?location=#{zip}&limit=10&radius=10")
+    response = @connection.get("/api/alt-fuel-stations/v1/nearest.json?location=#{zip}&limit=10&radius=10&fuel_type=ELEC,LPG")
     JSON.parse(response.body)
   end
 

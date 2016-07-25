@@ -5,10 +5,12 @@ class Station < OpenStruct
   end
 
   def self.all(zip)
+    station_obj = []
     stations = service.get_stations(zip)
     stations["fuel_stations"].each do |station|
-      Station.new(station_hash)
+      station_obj << Station.new(station)
     end
+    station_obj
   end
 
 
