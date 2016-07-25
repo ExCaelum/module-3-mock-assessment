@@ -1,11 +1,12 @@
-<p>
-<% @stations.each do |station| %>
-Name: <%= station.name %>
-Address: <%= station.address %>
-Fuel Type: <%= station.fuel_type %>
-Distance: <%= station.distance %>
-Access Times: <%= station.access_time %>
-<br>
-<% end %>
+<h1> Stations </h1>
 
-</p>
+
+<% @stations.each do |station| %>
+<p>
+Name: <%= station.station_name %><br>
+Address: <%= station.street_address %><br>
+Fuel Type: <%= station.fuel_type_code %><br>
+Distance: <%= station.distance %><br>
+Access Times: <%= station.access_days_time %><br>
+<br><br>
+<% end %>
