@@ -2,11 +2,11 @@ class StationService
 
   def initialize
     @connection = Faraday.new("https://developer.nrel.gov")
-    @connection.headers["api_key"] = ENV["NREL"]
+    @connection.headers["X-Api-Key"] = ENV["NREL"]
   end
 
   def get_stations(zip)
-    response = @connection.get("/api/alt-fuel-stations/v1/nearest.format&zip=#{zip}?limit=6")
+    response = @connection.get("/api/alt-fuel-stations/v1/nearest.json?location=#{zip}&limit=10&radius=10")
     JSON.parse(response.body)
   end
 
